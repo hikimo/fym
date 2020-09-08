@@ -4,10 +4,10 @@ import { BlurView } from '@react-native-community/blur';
 import styles from './styles';
 
 interface Props {
-  itemId: any,
+  itemId: any
   bgImg: string
   coverImg: string
-  itemTitle: string,
+  itemTitle: string
   genre: string
 }
 

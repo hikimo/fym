@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, ImageBackground, View, Text } from 'react-native';
+import { TouchableOpacity, ImageBackground, View, Text, Image } from 'react-native';
 
 import styles from './styles';
 
@@ -12,10 +12,10 @@ interface Props {
   date: string
 }
 
-const ScrollingBannerItem: React.FC<Props> = (props) => {
+const ScrollingBannerItemSmall: React.FC<Props> = (props) => {
   return (
     <TouchableOpacity onPress={() => console.log('Diklik id ' + props.id)}>
-      <ImageBackground
+      <View
         style={
           [
             styles.container, 
@@ -26,17 +26,24 @@ const ScrollingBannerItem: React.FC<Props> = (props) => {
             && styles.rightContainer
           ]
         }
-        imageStyle={styles.imgBg}
-        source={{uri: props.coverImg}}
       >
-        <View style={styles.overlay} />
+        <View style={styles.imgContainer}>
+          <Image source={{uri: props.img}} resizeMode="contain" resizeMethod="resize" style={styles.img} />
+        </View>
+        
         <View style={styles.descContainer}>
           <Text style={styles.descDate}>{ props.date }</Text>
-          <Text style={styles.descTitle}>{ props.title }</Text>
+          <Text style={styles.descTitle}>
+            {
+              props.title.length >= 22
+              ? props.title.slice(0, 22).concat('..')
+              : props.title
+            }
+          </Text>
         </View>
-      </ImageBackground>
+      </View>
     </TouchableOpacity>
   );
 };
 
-export default ScrollingBannerItem;
+export default ScrollingBannerItemSmall;

@@ -7,5 +7,5 @@ export default {
   gray: '#717171',
   black: '#000000',
 
-  overlay: 'rgba(0, 0, 0, .25)',
+  overlay: 'rgba(0, 0, 0, .5)',
 }

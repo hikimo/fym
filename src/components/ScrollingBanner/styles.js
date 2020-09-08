@@ -4,7 +4,7 @@ import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
-    paddingVertical: 15
+    marginVertical: 15
   },
   topContainer: {
     flexDirection: 'row',

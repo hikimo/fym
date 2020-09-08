@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import Swiper from 'react-native-swiper';
 import styles from './styles';
+import colors from '../../config/colors';
 
 import SliderBannerItem from '../SliderBannerItem';
-import colors from '../../config/colors';
 
 
 interface Props {
+  autoplay?: Boolean
   items: Array<{
     id: any,
     bgImg: string,
@@ -32,6 +33,11 @@ const SliderBanner: React.FC<Props> = (props) => {
         height={200}
         dot={SliderDot({isActive: false})}
         activeDot={SliderDot({isActive: true})}
+        loadMinimal={true}
+        loadMinimalSize={3}
+        loadMinimalLoader={(<ActivityIndicator size="large" color={colors.primaryColor} />)}
+        autoplay={props.autoplay ? true : false}
+        autoplayTimeout={3.5}
       >
         {
           props.items &&

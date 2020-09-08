@@ -10,36 +10,29 @@ export default StyleSheet.create({
     marginRight: 15
   },
   container: {
-    width: Dimensions.get('screen').width - 60,
-    height: 180,
+    width: Dimensions.get('screen').width * 35 / 100,
     marginHorizontal: 5,
-    borderRadius: 20,
-    overflow: 'hidden',
   },
-  imgBg: {
-    resizeMode: 'cover',
-    borderRadius: 20,
+  imgContainer: {
+    marginBottom: 10
   },
-  overlay: {
-    height: '100%',
+  img: {
     width: '100%',
-    backgroundColor: colors.overlay
+    height: 190,
+    borderRadius: 10,
   },
 
   descContainer: {
-    paddingHorizontal: 15,
-    marginBottom: 10,
-    position: 'absolute',
-    bottom: 10,
+    marginBottom: 5,
   },
   descDate: {
-    color: colors.lightColor,
+    color: colors.primaryColor,
     fontFamily: fonts.roboto.light,
     fontSize: 12
   },
   descTitle: {
-    color: colors.lightColor, 
-    fontFamily: fonts.roboto.regular,
-    fontSize: 22
+    color: colors.primaryColor, 
+    fontFamily: fonts.roboto.medium,
+    fontSize: 14
   }
-})
+});
