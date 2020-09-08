@@ -14,16 +14,17 @@ export default StyleSheet.create({
     height: 180,
     marginHorizontal: 5,
     borderRadius: 20,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   imgBg: {
     resizeMode: 'cover',
     borderRadius: 20,
   },
   overlay: {
+    position: 'absolute',
     height: '100%',
     width: '100%',
-    backgroundColor: colors.overlay
+    backgroundColor: colors.overlay,
   },
 
   descContainer: {

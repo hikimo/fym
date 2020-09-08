@@ -14,6 +14,6 @@ export default StyleSheet.create({
   title: {
     fontSize: 18,
     fontFamily: fonts.roboto.light,
-    color: colors.lightColor
+    color: colors.lightGreen
   }
 });
