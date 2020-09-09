@@ -10,13 +10,7 @@ const Drawer = createDrawerNavigator();
 
 const RootRoutes: React.FC = () => (
   <Drawer.Navigator
-    openByDefault
     initialRouteName="Home"
-    drawerStyle={
-      {
-        backgroundColor: colors.lightColor
-      }
-    }
     drawerContent={({ navigation }) => {
       return <DrawerMenu navigation={navigation} />
     }}
