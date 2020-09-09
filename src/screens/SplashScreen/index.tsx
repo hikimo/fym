@@ -1,9 +1,17 @@
-import React from 'react';
-import { StatusBar, SafeAreaView, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StatusBar, SafeAreaView, Text, View, ActivityIndicator } from 'react-native';
+
 import styles from './styles';
 import colors from '../../config/colors';
 
-const SplashScreen: React.FC = () => {
+const SplashScreen: React.FC<{navigation: any}> = ({ navigation }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Root');
+    }, 2500);
+    // eslint-disable-next-line
+  }, [])
+  
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor={colors.primaryColor} />
@@ -12,6 +20,8 @@ const SplashScreen: React.FC = () => {
           <Text style={styles.title}>FYM</Text>
         </View>
         <Text style={styles.subTitle}>Find Your Movie</Text>
+
+        <ActivityIndicator size="large" color={colors.lightColor} />
       </SafeAreaView>
     </>
   );

@@ -6,6 +6,8 @@ import styles from './styles';
 
 interface Props {
   hidden?: boolean
+  onMenuPress: any
+  onSearchPress: any
 }
 
 const Header: React.FC<Props> = (props) => {
@@ -18,7 +20,7 @@ const Header: React.FC<Props> = (props) => {
       <StatusBar backgroundColor={colors.primaryColor} />
       <SafeAreaView style={styles.container}>
         <View>
-          <TouchableOpacity onPress={() => console.warn('Will coming as menu')}>
+          <TouchableOpacity onPress={props.onMenuPress}>
             <Icon name="appstore1" size={18} color={colors.lightColor} />
           </TouchableOpacity>
         </View>
@@ -28,7 +30,7 @@ const Header: React.FC<Props> = (props) => {
         </View>
         
         <View>
-          <TouchableOpacity onPress={() => console.warn('Will coming later')}>
+          <TouchableOpacity onPress={props.onSearchPress}>
             <Icon name="search1" size={18} color={colors.lightColor} />
           </TouchableOpacity>
         </View>

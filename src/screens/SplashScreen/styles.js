@@ -24,6 +24,7 @@ export default StyleSheet.create({
     letterSpacing: 9
   },
   subTitle: {
+    marginBottom: 10,
     color: colors.lightColor,
     fontFamily: fonts.roboto.thin,
     textTransform: 'uppercase'

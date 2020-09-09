@@ -2,18 +2,20 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // components
-import HomeScreen from '../screens/HomeScreen'
-import SplashScreen from '../screens/SplashScreen'
+import DrawerRoutes from './DrawerRoutes';
+import SplashScreen from '../screens/SplashScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
 const MainRoutes: React.FC = () => {
   return(
-    <Stack.Navigator initialRouteName="Home" headerMode="none">
-      <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator initialRouteName="Splash" headerMode="none">
+      <Stack.Screen name="Root" component={DrawerRoutes} />
       <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Search" component={SearchScreen} />
     </Stack.Navigator>
-  )
+  );
 };
 
 export default MainRoutes;

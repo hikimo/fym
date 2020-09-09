@@ -1,13 +1,14 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 import Header from '../../components/Header';
 import SliderBanner from '../../components/SliderBanner';
 import ScrollingBanner from '../../components/ScrollingBanner';
 
 import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const HomeScreen: React.FC = () => {
+const HomeScreen: React.FC<{navigation: any}> = ({ navigation }) => {
   const items = [
     {
       id: 'subcanon',
@@ -58,7 +59,7 @@ const HomeScreen: React.FC = () => {
 
   return(
     <>
-      <Header />
+      <Header onMenuPress={() => navigation.openDrawer()} onSearchPress={() => navigation.navigate('Search')} />
       <ScrollView contentContainerStyle={styles.container} nestedScrollEnabled={true}>
         <SliderBanner items={sliderItem} autoplay />
         <ScrollingBanner items={items} title="Top Rated" onViewAllPress={() => console.log("soon")} />
